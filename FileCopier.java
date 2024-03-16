@@ -21,7 +21,7 @@ public class FileCopier {
                     if (dirName.equals("node_modules") || dirName.equals("dist")) {
                         return FileVisitResult.SKIP_SUBTREE;
                     }
-                    // TODO: It's ok relativize the path?
+
                     Path targetPath = targetDir.resolve(sourceDir.relativize(dir));
                     if (!Files.exists(targetPath)) {
                         Files.createDirectory(targetPath);
